@@ -3,144 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <title>ANSHIKA UDHYOG NETWORK</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
 <style>
 *{box-sizing:border-box}
 body{
 margin:0;
-font-family:Segoe UI,Arial;
-background:#f2f4f8;
-padding-bottom:70px
+font-family:system-ui,-apple-system,Segoe UI,Arial;
+background:#eef1f5;
+padding-bottom:72px;
 }
 
-/* HEADER */
-header{
+/* ===== APP HEADER ===== */
+.app-header{
 background:#0b3c5d;
 color:#fff;
-padding:14px;
+padding:14px 16px;
 text-align:center;
-font-weight:700;
 font-size:18px;
-position:sticky;
+font-weight:700;
+position:fixed;
 top:0;
-z-index:10
+left:0;
+right:0;
+z-index:100;
 }
 
-/* SECTION */
-.section{display:none;padding:16px}
+/* ===== SECTION ===== */
+.section{
+display:none;
+padding:78px 14px 14px;
+}
 .section.active{display:block}
 
-/* CARD */
+/* ===== CARD ===== */
 .card{
 background:#fff;
-border-radius:16px;
+border-radius:18px;
 padding:16px;
 margin-bottom:14px;
-box-shadow:0 6px 18px rgba(0,0,0,.12)
+box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
-/* GRID */
+/* ===== GRID ===== */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:12px
+grid-template-columns:repeat(2,1fr);
+gap:12px;
 }
 
-/* BUTTON */
+/* ===== BUTTON ===== */
 .btn{
 width:100%;
-padding:12px;
+padding:13px;
 border:none;
 border-radius:30px;
 background:#0b3c5d;
 color:#fff;
+font-size:15px;
 font-weight:600;
 margin-top:10px;
-font-size:15px
 }
 .green{background:#198754}
 .gray{background:#6c757d}
 
-/* FORM */
+/* ===== FORM ===== */
 input{
 width:100%;
 padding:12px;
-border-radius:10px;
+border-radius:12px;
 border:1px solid #ccc;
-margin:8px 0
+margin:8px 0;
+font-size:14px;
 }
 
-/* BOTTOM MENU */
+/* ===== AMOUNT ===== */
+.amount{
+font-size:28px;
+font-weight:800;
+color:#0b3c5d;
+}
+
+/* ===== BOTTOM NAV ===== */
 .bottom-nav{
 position:fixed;
 bottom:0;
 left:0;
 right:0;
+height:64px;
 background:#fff;
 display:flex;
-justify-content:space-around;
 border-top:1px solid #ddd;
-padding:8px 0
+z-index:200;
 }
 .bottom-nav div{
+flex:1;
 text-align:center;
 font-size:12px;
-color:#555
+color:#777;
+padding-top:6px;
 }
 .bottom-nav span{
-font-size:22px;
-display:block
+font-size:24px;
+display:block;
 }
-.bottom-nav div.active{
+.bottom-nav .active{
 color:#0b3c5d;
-font-weight:700
-}
-
-/* WALLET */
-.amount{
-font-size:26px;
 font-weight:700;
-color:#0b3c5d
 }
 </style>
 </head>
 
 <body>
 
-<header>ANSHIKA UDHYOG NETWORK</header>
+<!-- APP HEADER -->
+<div class="app-header">ANSHIKA UDHYOG</div>
 
 <!-- HOME -->
 <section id="home" class="section active">
 
 <div class="card" style="text-align:center">
 <h2>Welcome 👋</h2>
-<h1 style="color:#0b3c5d">ANSHIKA UDHYOG</h1>
+<h3 style="color:#0b3c5d;margin:4px 0">ANSHIKA UDHYOG NETWORK</h3>
 <p>Self Employment • Digital India</p>
 </div>
 
 <div class="grid">
 <div class="card">
-<b>💰 Multiple Income</b><br>
-Active • Passive • Level
+<b>💰 Total Income</b><br><br>
+₹26,500
 </div>
 <div class="card">
-<b>🌐 Team Network</b><br>
-Unlimited Growth
+<b>🏦 Wallet</b><br><br>
+₹9,567
 </div>
 <div class="card">
-<b>🛒 Products</b><br>
-Utility & Health
+<b>🌐 Team</b><br><br>
+565 Members
 </div>
 <div class="card">
-<b>🏦 Wallet</b><br>
-Weekly Payout
+<b>🏆 Rank</b><br><br>
+Motivator
 </div>
 </div>
 
 <div class="card">
-<button class="btn" onclick="show('register')">Join Now</button>
 <button class="btn green" onclick="show('login')">Login</button>
+<button class="btn" onclick="show('register')">Join Now</button>
 </div>
 
 </section>
@@ -148,13 +157,13 @@ Weekly Payout
 <!-- REGISTER -->
 <section id="register" class="section">
 <div class="card">
-<h3>New User Registration</h3>
+<h3>📝 New Registration</h3>
 <input placeholder="Sponsor ID (optional)">
-<input placeholder="Full Name *">
-<input placeholder="Mobile Number *">
-<input placeholder="Email (optional)">
-<input type="password" placeholder="Password *">
-<input type="password" placeholder="Confirm Password *">
+<input placeholder="Full Name">
+<input placeholder="Mobile Number">
+<input placeholder="Email">
+<input type="password" placeholder="Password">
+<input type="password" placeholder="Confirm Password">
 <button class="btn green">Register & Pay ₹260</button>
 <button class="btn gray" onclick="show('home')">Back</button>
 </div>
@@ -163,7 +172,7 @@ Weekly Payout
 <!-- LOGIN -->
 <section id="login" class="section">
 <div class="card">
-<h3>User Login</h3>
+<h3>🔐 User Login</h3>
 <input placeholder="User ID">
 <input type="password" placeholder="Password">
 <button class="btn" onclick="show('dashboard')">Login</button>
@@ -175,7 +184,7 @@ Weekly Payout
 <section id="dashboard" class="section">
 
 <div class="card">
-<b>User:</b> Krishna Sharma<br>
+<b>Name:</b> Demo User<br>
 <b>ID:</b> AUN00002<br>
 <b>Rank:</b> Motivator
 </div>
@@ -204,12 +213,12 @@ Weekly Payout
 <!-- INCOME -->
 <section id="income" class="section">
 <div class="card">
-<h3>Income Overview</h3>
+<h3>💰 Income Details</h3>
 <ul>
-<li>Active Income: ₹3,400</li>
-<li>Upgrade Income: ₹2,650</li>
-<li>Level Income: ₹17,300</li>
-<li>Utility Income: ₹1,150</li>
+<li>Active Income – ₹3,400</li>
+<li>Level Income – ₹17,300</li>
+<li>Utility Income – ₹1,150</li>
+<li>Bonus – ₹4,650</li>
 </ul>
 </div>
 </section>
@@ -217,12 +226,11 @@ Weekly Payout
 <!-- WALLET -->
 <section id="wallet" class="section">
 <div class="card" style="text-align:center">
-<h3>Wallet Balance</h3>
+<h3>🏦 Wallet Balance</h3>
 <div class="amount">₹9,567</div>
 </div>
-
 <div class="card">
-<button class="btn green">Request Withdraw</button>
+<button class="btn green">Withdraw</button>
 <button class="btn gray">Add Bank</button>
 </div>
 </section>
@@ -230,14 +238,14 @@ Weekly Payout
 <!-- TEAM -->
 <section id="team" class="section">
 <div class="card">
-<h3>Team Summary</h3>
+<h3>🌐 Team Overview</h3>
 <p>Total Members: <b>565</b></p>
 <p>Active Members: <b>423</b></p>
-<p>New Today: <b>14</b></p>
+<p>Today Joined: <b>14</b></p>
 </div>
 </section>
 
-<!-- BOTTOM MENU -->
+<!-- BOTTOM NAV -->
 <div class="bottom-nav">
 <div class="active" onclick="nav('home')"><span>🏠</span>Home</div>
 <div onclick="nav('income')"><span>💰</span>Income</div>
