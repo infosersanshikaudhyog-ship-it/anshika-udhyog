@@ -14,13 +14,16 @@ background:#eef1f5;
 padding-bottom:72px;
 }
 
-/* ===== APP HEADER ===== */
+/* APP HEADER */
 .app-header{
 background:#0b3c5d;
 color:#fff;
-padding:14px 16px;
-text-align:center;
-font-size:18px;
+padding:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+font-size:17px;
 font-weight:700;
 position:fixed;
 top:0;
@@ -28,15 +31,17 @@ left:0;
 right:0;
 z-index:100;
 }
+.app-header img{
+height:34px;
+border-radius:6px;
+}
 
-/* ===== SECTION ===== */
+/* SECTION */
 .section{
-display:none;
 padding:78px 14px 14px;
 }
-.section.active{display:block}
 
-/* ===== CARD ===== */
+/* CARD */
 .card{
 background:#fff;
 border-radius:18px;
@@ -45,14 +50,14 @@ margin-bottom:14px;
 box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
-/* ===== GRID ===== */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:12px;
 }
 
-/* ===== BUTTON ===== */
+/* BUTTON */
 .btn{
 width:100%;
 padding:13px;
@@ -67,206 +72,91 @@ margin-top:10px;
 .green{background:#198754}
 .gray{background:#6c757d}
 
-/* ===== FORM ===== */
-input{
-width:100%;
-padding:12px;
-border-radius:12px;
-border:1px solid #ccc;
-margin:8px 0;
-font-size:14px;
-}
-
-/* ===== AMOUNT ===== */
-.amount{
-font-size:28px;
-font-weight:800;
-color:#0b3c5d;
-}
-
-/* ===== BOTTOM NAV ===== */
-.bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-height:64px;
-background:#fff;
-display:flex;
-border-top:1px solid #ddd;
-z-index:200;
-}
-.bottom-nav div{
-flex:1;
-text-align:center;
-font-size:12px;
-color:#777;
-padding-top:6px;
-}
-.bottom-nav span{
-font-size:24px;
-display:block;
-}
-.bottom-nav .active{
-color:#0b3c5d;
-font-weight:700;
-}
+/* TEXT */
+.small{font-size:13px;color:#555}
+.center{text-align:center}
 </style>
 </head>
 
 <body>
 
 <!-- APP HEADER -->
-<div class="app-header">ANSHIKA UDHYOG</div>
+<div class="app-header">
+  <img src="https://i.ibb.co/sdb6q8nM/file-00000000a20471fda53235897c948cd9.jpg">
+  <span>ANSHIKA UDHYOG</span>
+</div>
 
 <!-- HOME -->
-<section id="home" class="section active">
+<section class="section">
 
-<div class="card" style="text-align:center">
-<h2>Welcome 👋</h2>
-<h3 style="color:#0b3c5d;margin:4px 0">ANSHIKA UDHYOG NETWORK</h3>
-<p>Self Employment • Digital India</p>
+<!-- BANNER -->
+<div class="card">
+  <img src="https://i.ibb.co/nMgnmFrq/file-00000000a3807206b2bc9ec7914708a0.png"
+       style="width:100%;border-radius:16px">
 </div>
 
+<!-- WELCOME -->
+<div class="card center">
+  <h2>Welcome 👋</h2>
+  <h3 style="color:#0b3c5d;margin:4px 0">
+    ANSHIKA UDHYOG NETWORK
+  </h3>
+  <p class="small">
+    Self Employment • Digital India • Financial Freedom
+  </p>
+</div>
+
+<!-- BRAND AMBASSADOR -->
+<div class="card center">
+  <img src="https://i.ibb.co/LhbWykF9/file-00000000b8f871fab2f3070ba5d623eb.png"
+       style="width:110px;height:110px;border-radius:50%;object-fit:cover">
+  <h3 style="margin:10px 0 4px">ANSHIKA</h3>
+  <p class="small">
+    Brand Ambassador<br>
+    ANSHIKA UDHYOG NETWORK
+  </p>
+</div>
+
+<!-- MANAGING DIRECTOR -->
+<div class="card" style="display:flex;gap:12px;align-items:center">
+  <img src="https://i.ibb.co/tpB6nYyp/file-00000000c97c7206b235b7dc6fd5ac39.png"
+       style="width:80px;height:80px;border-radius:14px;object-fit:cover">
+  <div>
+    <b>Dulal Mukherjee</b><br>
+    <span class="small">
+      Managing Director<br>
+      ANSHIKA UDHYOG NETWORK
+    </span>
+  </div>
+</div>
+
+<!-- FEATURES -->
 <div class="grid">
-<div class="card">
-<b>💰 Total Income</b><br><br>
-₹26,500
-</div>
-<div class="card">
-<b>🏦 Wallet</b><br><br>
-₹9,567
-</div>
-<div class="card">
-<b>🌐 Team</b><br><br>
-565 Members
-</div>
-<div class="card">
-<b>🏆 Rank</b><br><br>
-Motivator
-</div>
-</div>
-
-<div class="card">
-<button class="btn green" onclick="show('login')">Login</button>
-<button class="btn" onclick="show('register')">Join Now</button>
+  <div class="card">
+    <b>💰 Multiple Income</b><br>
+    <span class="small">Active • Passive • Level</span>
+  </div>
+  <div class="card">
+    <b>🌐 Team Network</b><br>
+    <span class="small">Unlimited Growth</span>
+  </div>
+  <div class="card">
+    <b>🛒 Products</b><br>
+    <span class="small">Utility & Health</span>
+  </div>
+  <div class="card">
+    <b>🏦 Weekly Payout</b><br>
+    <span class="small">Secure Wallet System</span>
+  </div>
 </div>
 
-</section>
-
-<!-- REGISTER -->
-<section id="register" class="section">
+<!-- ACTION -->
 <div class="card">
-<h3>📝 New Registration</h3>
-<input placeholder="Sponsor ID (optional)">
-<input placeholder="Full Name">
-<input placeholder="Mobile Number">
-<input placeholder="Email">
-<input type="password" placeholder="Password">
-<input type="password" placeholder="Confirm Password">
-<button class="btn green">Register & Pay ₹260</button>
-<button class="btn gray" onclick="show('home')">Back</button>
-</div>
-</section>
-
-<!-- LOGIN -->
-<section id="login" class="section">
-<div class="card">
-<h3>🔐 User Login</h3>
-<input placeholder="User ID">
-<input type="password" placeholder="Password">
-<button class="btn" onclick="show('dashboard')">Login</button>
-<button class="btn gray" onclick="show('home')">Back</button>
-</div>
-</section>
-
-<!-- DASHBOARD -->
-<section id="dashboard" class="section">
-
-<div class="card">
-<b>Name:</b> Demo User<br>
-<b>ID:</b> AUN00002<br>
-<b>Rank:</b> Motivator
-</div>
-
-<div class="grid">
-<div class="card">
-<b>Main Wallet</b><br>
-₹9,567
-</div>
-<div class="card">
-<b>Total Income</b><br>
-₹26,500
-</div>
-<div class="card">
-<b>Total Team</b><br>
-565
-</div>
-<div class="card">
-<b>Today Income</b><br>
-₹450
-</div>
+  <button class="btn green">Join Now</button>
+  <button class="btn">Login</button>
 </div>
 
 </section>
-
-<!-- INCOME -->
-<section id="income" class="section">
-<div class="card">
-<h3>💰 Income Details</h3>
-<ul>
-<li>Active Income – ₹3,400</li>
-<li>Level Income – ₹17,300</li>
-<li>Utility Income – ₹1,150</li>
-<li>Bonus – ₹4,650</li>
-</ul>
-</div>
-</section>
-
-<!-- WALLET -->
-<section id="wallet" class="section">
-<div class="card" style="text-align:center">
-<h3>🏦 Wallet Balance</h3>
-<div class="amount">₹9,567</div>
-</div>
-<div class="card">
-<button class="btn green">Withdraw</button>
-<button class="btn gray">Add Bank</button>
-</div>
-</section>
-
-<!-- TEAM -->
-<section id="team" class="section">
-<div class="card">
-<h3>🌐 Team Overview</h3>
-<p>Total Members: <b>565</b></p>
-<p>Active Members: <b>423</b></p>
-<p>Today Joined: <b>14</b></p>
-</div>
-</section>
-
-<!-- BOTTOM NAV -->
-<div class="bottom-nav">
-<div class="active" onclick="nav('home')"><span>🏠</span>Home</div>
-<div onclick="nav('income')"><span>💰</span>Income</div>
-<div onclick="nav('wallet')"><span>🏦</span>Wallet</div>
-<div onclick="nav('team')"><span>🌐</span>Team</div>
-</div>
-
-<script>
-function show(id){
-document.querySelectorAll('.section')
-.forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-}
-
-function nav(id){
-show(id);
-document.querySelectorAll('.bottom-nav div')
-.forEach(d=>d.classList.remove('active'));
-event.currentTarget.classList.add('active');
-}
-</script>
 
 </body>
 </html>
