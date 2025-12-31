@@ -299,6 +299,12 @@ document.getElementById("t3").innerText="Self Employment • Skill Development �
 isHindi=true;
 }
 }
+<script>
+function userLoginSuccess(){
+  closeAll();
+  document.getElementById("userDashboard").style.display="flex";
+}
+</script>
 
 function openAdmin(){closeAll();adminModal.style.display="flex";}
 function openJoin(){closeAll();joinModal.style.display="flex";}
@@ -310,7 +316,42 @@ function scrollToTop(){
 window.scrollTo({top:0,behavior:"smooth"});
 }
 </script>
+<!-- ================= USER DASHBOARD ================= -->
+<div class="modal-bg" id="userDashboard">
+  <div class="modal" style="max-width:480px">
 
+    <h3 style="text-align:center">👤 User Dashboard</h3>
+
+    <div class="card">
+      <b>Name:</b> Demo User<br>
+      <b>User ID:</b> AUN00002<br>
+      <b>Rank:</b> Motivator
+    </div>
+
+    <div class="card">
+      <b>💰 Total Income</b><br>
+      ₹ 26,500
+    </div>
+
+    <div class="card">
+      <b>🏦 Wallet Balance</b><br>
+      ₹ 9,567
+    </div>
+
+    <div class="card">
+      <b>🌐 Team Status</b><br>
+      Total Members: 565<br>
+      Active Members: 423
+    </div>
+
+    <button class="btn green" onclick="alert('Income Details')">📊 Income Details</button>
+    <button class="btn" onclick="alert('Wallet Page')">🏦 Wallet</button>
+    <button class="btn" onclick="alert('Team Page')">🌐 Team</button>
+
+    <button class="btn" onclick="closeAll()">Logout</button>
+
+  </div>
+</div>
 </body>
 </html>
 <!-- ================= ADMIN DASHBOARD ================= -->
