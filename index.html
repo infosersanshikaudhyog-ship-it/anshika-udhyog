@@ -1,52 +1,53 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>ANSHIKA UDHYOG NETWORK</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-margin:0;
-font-family:system-ui,-apple-system,Segoe UI,Arial;
+font-family:system-ui,Segoe UI,Arial;
 background:#eef1f5;
 padding-bottom:70px;
 }
 
 /* HEADER */
-.app-header{
+.header{
+position:fixed;top:0;left:0;right:0;
 background:#0b3c5d;color:#fff;
-padding:10px 12px;
-display:flex;justify-content:space-between;align-items:center;
-position:fixed;top:0;left:0;right:0;z-index:100
+display:flex;align-items:center;justify-content:space-between;
+padding:10px 12px;z-index:100
 }
-.header-left{display:flex;gap:8px;align-items:center}
-.header-left img{height:34px;border-radius:6px}
+.header img{height:34px;border-radius:6px}
 .h-btn{
 background:rgba(255,255,255,.15);
 border:none;color:#fff;
-padding:6px 10px;border-radius:20px;font-size:12px
+padding:6px 12px;border-radius:20px;
+font-size:12px
 }
 
 /* SECTIONS */
-.section{padding:76px 14px 14px;display:none}
+.section{display:none;padding:80px 14px 14px}
 .section.active{display:block}
 
 /* CARD */
 .card{
-background:#fff;border-radius:18px;
-padding:16px;margin-bottom:14px;
+background:#fff;
+border-radius:18px;
+padding:16px;
+margin-bottom:14px;
 box-shadow:0 8px 20px rgba(0,0,0,.12)
 }
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.icon{font-size:30px;animation:pulse 1.8s infinite}
+.icon{font-size:30px;animation:pulse 1.6s infinite}
 @keyframes pulse{50%{transform:scale(1.15)}}
 
 /* BUTTON */
 .btn{
-width:100%;padding:13px;border:none;
-border-radius:30px;
+width:100%;padding:13px;
+border:none;border-radius:30px;
 background:#0b3c5d;color:#fff;
 font-size:15px;font-weight:600;margin-top:10px
 }
@@ -64,7 +65,8 @@ padding:20px;border-radius:18px
 }
 input{
 width:100%;padding:12px;
-border-radius:12px;border:1px solid #ccc;margin:8px 0
+border-radius:12px;border:1px solid #ccc;
+margin:8px 0
 }
 
 /* BOTTOM NAV */
@@ -74,8 +76,8 @@ height:64px;background:#fff;
 display:flex;border-top:1px solid #ddd
 }
 .bottom-nav div{
-flex:1;text-align:center;font-size:12px;
-padding-top:6px;color:#555
+flex:1;text-align:center;
+font-size:12px;padding-top:6px;color:#555
 }
 .bottom-nav span{font-size:24px;display:block}
 .bottom-nav .active{color:#0b3c5d;font-weight:700}
@@ -85,8 +87,8 @@ padding-top:6px;color:#555
 <body>
 
 <!-- HEADER -->
-<div class="app-header">
-  <div class="header-left">
+<div class="header">
+  <div style="display:flex;align-items:center;gap:8px">
     <img src="https://i.ibb.co/sdb6q8nM/file-00000000a20471fda53235897c948cd9.jpg">
     <b>ANSHIKA UDHYOG</b>
   </div>
@@ -94,7 +96,7 @@ padding-top:6px;color:#555
 </div>
 
 <!-- HOME -->
-<section class="section active" id="home">
+<section id="home" class="section active">
   <div class="card">
     <img src="https://i.ibb.co/nsK8pm4g/file-000000002ae87207a555e534c516e129.png" style="width:100%;border-radius:16px">
   </div>
@@ -118,21 +120,21 @@ padding-top:6px;color:#555
 </section>
 
 <!-- INCOME -->
-<section class="section" id="income">
+<section id="income" class="section">
   <div class="card">
-    <h3>💰 Income Summary</h3>
+    <h3>💰 Income</h3>
     <ul>
-      <li>Active Income: ₹12,500</li>
-      <li>Passive Income: ₹8,000</li>
-      <li>Level Income: ₹4,200</li>
-      <li>Royalty Bonus: ₹1,800</li>
+      <li>Active: ₹12,500</li>
+      <li>Passive: ₹8,000</li>
+      <li>Level: ₹4,200</li>
+      <li>Royalty: ₹1,800</li>
     </ul>
     <b>Total: ₹26,500</b>
   </div>
 </section>
 
 <!-- WALLET -->
-<section class="section" id="wallet">
+<section id="wallet" class="section">
   <div class="card">
     <h3>🏦 Wallet</h3>
     <ul>
@@ -145,14 +147,14 @@ padding-top:6px;color:#555
 </section>
 
 <!-- TEAM -->
-<section class="section" id="team">
+<section id="team" class="section">
   <div class="card">
-    <h3>🌐 Team Overview</h3>
+    <h3>🌐 Team</h3>
     <ul>
       <li>Total Members: 565</li>
       <li>Active Members: 423</li>
-      <li>Direct Team: 12</li>
-      <li>Level Team: 553</li>
+      <li>Direct: 12</li>
+      <li>Levels: 553</li>
     </ul>
   </div>
 </section>
@@ -173,22 +175,44 @@ padding-top:6px;color:#555
 <!-- LOGIN MODAL -->
 <div class="modal-bg" id="loginModal">
 <div class="modal">
-<h3>🔐 Login</h3>
+<h3>🔐 User Login</h3>
 <input placeholder="User ID">
 <input type="password" placeholder="Password">
-<button class="btn green">Login</button>
+<button class="btn green" onclick="openUserDash()">Login</button>
 <button class="btn" onclick="closeAll()">Close</button>
 </div>
 </div>
 
-<!-- ADMIN MODAL -->
+<!-- USER DASH -->
+<div class="modal-bg" id="userDash">
+<div class="modal">
+<h3>👤 User Dashboard</h3>
+<div class="card">Income: ₹26,500</div>
+<div class="card">Wallet: ₹9,567</div>
+<div class="card">Team: 565</div>
+<button class="btn" onclick="closeAll()">Logout</button>
+</div>
+</div>
+
+<!-- ADMIN LOGIN -->
 <div class="modal-bg" id="adminModal">
 <div class="modal">
 <h3>🔐 Admin Login</h3>
 <input placeholder="Admin ID">
 <input type="password" placeholder="Password">
-<button class="btn green">Login</button>
+<button class="btn green" onclick="openAdminDash()">Login</button>
 <button class="btn" onclick="closeAll()">Close</button>
+</div>
+</div>
+
+<!-- ADMIN DASH -->
+<div class="modal-bg" id="adminDash">
+<div class="modal">
+<h3>📊 Admin Dashboard</h3>
+<div class="card">Users: 1254</div>
+<div class="card">Income: ₹18,45,320</div>
+<div class="card">Centers: 87</div>
+<button class="btn" onclick="closeAll()">Logout</button>
 </div>
 </div>
 
@@ -207,6 +231,8 @@ document.querySelectorAll('.modal-bg').forEach(m=>m.style.display='none');
 function openJoin(){closeAll();joinModal.style.display='flex'}
 function openLogin(){closeAll();loginModal.style.display='flex'}
 function openAdmin(){closeAll();adminModal.style.display='flex'}
+function openUserDash(){closeAll();userDash.style.display='flex'}
+function openAdminDash(){closeAll();adminDash.style.display='flex'}
 
 function showPage(id,el){
 document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
