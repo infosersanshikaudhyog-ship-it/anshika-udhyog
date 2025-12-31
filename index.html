@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <title>ANSHIKA UDHYOG NETWORK</title>
@@ -11,35 +11,49 @@ body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Arial;
 background:#eef1f5;
-padding-bottom:20px;
+padding-bottom:80px;
 }
 
-/* ===== APP HEADER ===== */
+/* ===== HEADER ===== */
 .app-header{
 background:#0b3c5d;
 color:#fff;
-padding:12px;
+padding:10px 12px;
 display:flex;
 align-items:center;
-justify-content:center;
-gap:10px;
-font-size:17px;
+justify-content:space-between;
+gap:8px;
+font-size:16px;
 font-weight:700;
 position:fixed;
-top:0;
-left:0;
-right:0;
+top:0;left:0;right:0;
 z-index:100;
 }
-.app-header img{
-height:36px;
+.header-left{
+display:flex;
+align-items:center;
+gap:8px;
+}
+.header-left img{
+height:34px;
 border-radius:6px;
 }
-
-/* ===== SECTION ===== */
-.section{
-padding:78px 14px 14px;
+.header-right{
+display:flex;
+gap:8px;
 }
+.h-btn{
+background:rgba(255,255,255,.15);
+color:#fff;
+border:none;
+padding:6px 10px;
+border-radius:20px;
+font-size:12px;
+cursor:pointer;
+}
+
+/* ===== MAIN ===== */
+.section{padding:76px 14px 14px}
 
 /* ===== CARD ===== */
 .card{
@@ -57,9 +71,22 @@ grid-template-columns:repeat(2,1fr);
 gap:12px;
 }
 
+/* ===== ICON ANIMATION ===== */
+.icon{
+font-size:30px;
+animation:pulse 1.8s infinite;
+}
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.15)}
+100%{transform:scale(1)}
+}
+
 /* ===== TEXT ===== */
 .center{text-align:center}
 .small{font-size:13px;color:#555}
+ul{padding-left:18px;margin:8px 0}
+li{font-size:13px;margin-bottom:4px}
 
 /* ===== BUTTON ===== */
 .btn{
@@ -74,65 +101,215 @@ font-weight:600;
 margin-top:10px;
 }
 .green{background:#198754}
-.gray{background:#6c757d}
+
+/* ===== MODAL ===== */
+.modal-bg{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+z-index:999;
+align-items:center;
+justify-content:center;
+}
+.modal{
+background:#fff;
+width:90%;
+max-width:420px;
+padding:20px;
+border-radius:18px;
+}
+input{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:1px solid #ccc;
+margin:8px 0;
+}
+
+/* ===== BOTTOM NAV ===== */
+.bottom-nav{
+position:fixed;
+bottom:0;left:0;right:0;
+height:64px;
+background:#fff;
+display:flex;
+border-top:1px solid #ddd;
+z-index:200;
+}
+.bottom-nav div{
+flex:1;
+text-align:center;
+font-size:12px;
+color:#555;
+padding-top:6px;
+}
+.bottom-nav span{
+font-size:24px;
+display:block;
+}
+.bottom-nav div.active{
+color:#0b3c5d;
+font-weight:700;
+}
 </style>
 </head>
 
 <body>
 
-<!-- APP HEADER WITH LOGO -->
+<!-- HEADER -->
 <div class="app-header">
-  <img src="https://i.ibb.co/sdb6q8nM/file-00000000a20471fda53235897c948cd9.jpg" alt="ANSHIKA LOGO">
-  <span>ANSHIKA UDHYOG</span>
+  <div class="header-left">
+    <img src="https://i.ibb.co/sdb6q8nM/file-00000000a20471fda53235897c948cd9.jpg">
+    <span>ANSHIKA UDHYOG</span>
+  </div>
+  <div class="header-right">
+    <button class="h-btn" onclick="toggleLang()">🌐</button>
+    <button class="h-btn" onclick="openAdmin()">🔐 Admin</button>
+  </div>
 </div>
 
-<!-- HOME SECTION -->
-<section class="section">
+<!-- HOME -->
+<section class="section" id="home">
 
 <!-- BANNER -->
 <div class="card">
-  <img src="https://i.ibb.co/nsK8pm4g/file-000000002ae87207a555e534c516e129.png"
-       style="width:100%;border-radius:16px" alt="Banner">
+<img src="https://i.ibb.co/nsK8pm4g/file-000000002ae87207a555e534c516e129.png"
+style="width:100%;border-radius:16px">
 </div>
 
 <!-- INTRO -->
 <div class="card center">
-  <h2>Welcome to</h2>
-  <h3 style="color:#0b3c5d;margin:4px 0">
-    ANSHIKA UDHYOG NETWORK
-  </h3>
-  <p class="small">
-    Self Employment • Skill Development • Digital India
-  </p>
+<h2 id="t1">Welcome to</h2>
+<h3 style="color:#0b3c5d" id="t2">ANSHIKA UDHYOG NETWORK</h3>
+<p class="small" id="t3">Self Employment • Skill Development • Digital India</p>
 </div>
 
 <!-- FEATURES -->
 <div class="grid">
-  <div class="card">
-    <b>💰 Multiple Income</b><br>
-    <span class="small">Active • Passive • Level</span>
-  </div>
-  <div class="card">
-    <b>🌐 Team Network</b><br>
-    <span class="small">Structured Growth System</span>
-  </div>
-  <div class="card">
-    <b>🛒 Products</b><br>
-    <span class="small">Utility & Daily Use</span>
-  </div>
-  <div class="card">
-    <b>🏦 Secure Wallet</b><br>
-    <span class="small">Weekly / Monthly Payout</span>
-  </div>
+
+<div class="card">
+<div class="icon">💰</div>
+<b id="f1">Multiple Income</b>
+<ul>
+<li>Active Income</li>
+<li>Passive Income</li>
+<li>Level Income</li>
+<li>Royalty & Bonus</li>
+</ul>
 </div>
 
-<!-- ACTION BUTTONS -->
 <div class="card">
-  <button class="btn green">Join Now</button>
-  <button class="btn">Login</button>
+<div class="icon">🌐</div>
+<b id="f2">Team Network</b>
+<ul>
+<li>Unlimited Team Growth</li>
+<li>Leadership Rewards</li>
+<li>Training Support</li>
+<li>Level System</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="icon">🛒</div>
+<b id="f3">Product</b>
+<ul>
+<li>Daily Utility Products</li>
+<li>Quality Tested</li>
+<li>Affordable Price</li>
+<li>Regular Supply</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="icon">🏦</div>
+<b id="f4">Secure Wallet</b>
+<ul>
+<li>Safe Digital Wallet</li>
+<li>Weekly / Monthly Payout</li>
+<li>Bank Transfer</li>
+<li>History & Report</li>
+</ul>
+</div>
+
+</div>
+
+<!-- ACTION -->
+<div class="card">
+<button class="btn green" onclick="openJoin()">Join Now</button>
+<button class="btn" onclick="openLogin()">Login</button>
 </div>
 
 </section>
+
+<!-- ADMIN MODAL -->
+<div class="modal-bg" id="adminModal">
+<div class="modal">
+<h3>🔐 Admin Login</h3>
+<input placeholder="Admin ID">
+<input type="password" placeholder="Password">
+<button class="btn">Login</button>
+<button class="btn" onclick="closeAll()">Close</button>
+</div>
+</div>
+
+<!-- JOIN MODAL -->
+<div class="modal-bg" id="joinModal">
+<div class="modal">
+<h3>📝 Registration</h3>
+<input placeholder="Full Name">
+<input placeholder="Mobile Number">
+<input placeholder="Email">
+<input type="password" placeholder="Password">
+<button class="btn green">Submit</button>
+<button class="btn" onclick="closeAll()">Close</button>
+</div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-bg" id="loginModal">
+<div class="modal">
+<h3>🔐 Login</h3>
+<input placeholder="User ID">
+<input type="password" placeholder="Password">
+<button class="btn">Login</button>
+<button class="btn" onclick="closeAll()">Close</button>
+</div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+<div class="active" onclick="scrollToTop()"><span>🏠</span>Home</div>
+<div onclick="openJoin()"><span>📝</span>Join</div>
+<div onclick="openLogin()"><span>🔐</span>Login</div>
+<div onclick="alert('Helpline: 7739000835')"><span>📞</span>Contact</div>
+</div>
+
+<script>
+let isHindi=true;
+
+function toggleLang(){
+if(isHindi){
+document.getElementById("t1").innerText="Welcome to";
+document.getElementById("t3").innerText="Self Employment • Skill Development • Digital India";
+isHindi=false;
+}else{
+document.getElementById("t1").innerText="Welcome to";
+document.getElementById("t3").innerText="Self Employment • Skill Development • Digital India";
+isHindi=true;
+}
+}
+
+function openAdmin(){closeAll();adminModal.style.display="flex";}
+function openJoin(){closeAll();joinModal.style.display="flex";}
+function openLogin(){closeAll();loginModal.style.display="flex";}
+function closeAll(){
+document.querySelectorAll(".modal-bg").forEach(m=>m.style.display="none");
+}
+function scrollToTop(){
+window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
 
 </body>
 </html>
