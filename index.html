@@ -1,129 +1,295 @@
-<!doctype html>
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>ANSHIKA UDHYOG CENTER</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>ANSHIKA UDHYOG NETWORK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box}
 body{
-  font-family:Arial,Segoe UI;
-  background:#f3f4f6;
-  color:#0b1220;
+  margin:0;
+  font-family:Segoe UI,Arial;
+  background:#f4f6fb;
+  color:#222;
 }
-a{text-decoration:none;color:inherit}
 
 /* HEADER */
 header{
   background:#fff;
-  text-align:center;
-  padding:14px;
-  border-bottom:4px solid #138808;
+  padding:12px 16px;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+  position:sticky;
+  top:0;
+  z-index:999;
 }
-header img{height:70px}
-header h1{font-size:22px;font-weight:900}
-header p{font-size:14px;color:#075985;font-weight:700}
-
-/* TOP ICON MENU */
-.menu{
+.header-flex{
   display:flex;
-  justify-content:space-around;
-  background:#0b1220;
-  padding:10px 0;
+  align-items:center;
+  gap:10px;
 }
-.menu a{
-  color:#fff;
-  font-size:12px;
-  text-align:center;
+.header-flex img{
+  height:42px;
 }
-.menu span{
-  display:block;
-  font-size:20px;
+.header-flex span{
+  font-weight:700;
+  color:#0b3c5d;
+  font-size:16px;
+}
+.tricolor{
+  height:4px;
+  background:linear-gradient(90deg,#ff9933,#fff,#138808);
 }
 
-/* CONTENT */
-main{padding:16px}
+/* SECTION */
+.section{
+  display:none;
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+.section.active{display:block}
+
+/* HERO */
+.hero img{
+  width:100%;
+  border-radius:16px;
+  margin-bottom:16px;
+}
+
+/* BUTTON */
+.btn{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:30px;
+  background:#0b3c5d;
+  color:#fff;
+  font-weight:600;
+  margin:8px 0;
+  font-size:15px;
+}
+.btn.gray{background:#6c757d}
+.btn.green{background:#198754}
+
+/* FORM */
+.form-box{
+  background:#fff;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
+  max-width:420px;
+  margin:auto;
+}
+input{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+label{font-size:13px}
+
+/* CARD */
 .card{
   background:#fff;
   padding:16px;
-  border-radius:12px;
-  margin-bottom:16px;
-  box-shadow:0 6px 20px rgba(0,0,0,.08)
+  border-radius:14px;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+  margin-bottom:14px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
 }
 
-/* FOOTER */
-footer{
+/* MENU */
+.menu{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-bottom:20px;
+}
+.menu div{
   background:#fff;
+  padding:14px;
+  border-radius:14px;
   text-align:center;
-  padding:12px;
-  font-size:14px;
-  font-weight:700;
-  border-top:2px solid #eee;
+  font-size:13px;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
 }
 
-/* FLOAT WHATSAPP */
-.float-wa{
-  position:fixed;
-  right:14px;
-  bottom:16px;
-  width:54px;
-  height:54px;
-  background:#25D366;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:26px;
+/* RANK */
+.rank{
+  padding:6px 14px;
+  border-radius:20px;
+  background:#198754;
   color:#fff;
+  font-size:12px;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:12px;
+}
+th,td{
+  padding:6px;
+  border-bottom:1px solid #ddd;
+}
+.active{color:green;font-weight:bold}
+.deactive{color:red;font-weight:bold}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 16px;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:22px;
+}
+
+footer{
+  text-align:center;
+  font-size:12px;
+  color:#555;
+  margin:20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-  <img src="https://i.ibb.co/hxVNFN2f/20251207-105001.jpg">
-  <h1>ANSHIKA UDHYOG CENTER</h1>
-  <p>DMVV BHARTIY MAHILA SHAKTI FOUNDATION™</p>
-  <p>भारत सरकार द्वारा मान्यता प्राप्त संस्था</p>
+  <div class="header-flex">
+    <img src="https://i.ibb.co/35W97bHM/20251207-105001.jpg">
+    <span>ANSHIKA UDHYOG NETWORK</span>
+  </div>
+  <div class="tricolor"></div>
 </header>
 
-<!-- MENU -->
-<div class="menu">
-  <a href="index.html"><span>🏠</span>Home</a>
-  <a href="about.html"><span>ℹ️</span>About</a>
-  <a href="register.html"><span>📝</span>Register</a>
-  <a href="contact.html"><span>📞</span>Contact</a>
-</div>
+<!-- HOME -->
+<section id="home" class="section active hero">
+  <img src="https://i.ibb.co/tPmT0VSQ/file-000000002ae87207a555e534c516e129.png">
+  <button class="btn" onclick="show('register')">Join Now</button>
+  <button class="btn" onclick="show('login')">Login</button>
+  <button class="btn gray" onclick="show('adminLogin')">Admin</button>
+</section>
 
-<!-- CONTENT -->
-<main>
+<!-- REGISTER -->
+<section id="register" class="section">
+  <div class="form-box">
+    <h3>User Registration</h3>
+    <input placeholder="Sponsor ID (optional)">
+    <input placeholder="Full Name *">
+    <input placeholder="Email ID">
+    <input placeholder="Mobile No *">
+    <input type="password" placeholder="Password *">
+    <input type="password" placeholder="Confirm Password *">
+
+    <label>
+      <input type="checkbox" checked> I agree to terms
+    </label>
+
+    <button class="btn" onclick="showPay()">Register</button>
+
+    <a id="payBtn" class="btn green" style="display:none;text-align:center"
+       href="upi://pay?pa=8349600835@ibl&pn=ANSHIKA%20UDHYOG&cu=INR">
+       Pay Now
+    </a>
+
+    <button class="btn gray" onclick="show('home')">Back</button>
+  </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="section">
+  <div class="form-box">
+    <h3>User Login</h3>
+    <input id="uid" placeholder="User ID">
+    <input id="upass" type="password" placeholder="Password">
+    <button class="btn" onclick="userLogin()">Login</button>
+    <p id="ulog" style="color:red;text-align:center"></p>
+    <button class="btn gray" onclick="show('home')">Back</button>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="section">
+
   <div class="card">
-    <h3>🔰 Self Employment Revolution Scheme</h3>
-    <p>
-      ANSHIKA UDHYOG CENTER महिलाओं, युवाओं और SHG समूहों को  
-      Training, Production, Digital Management और स्वरोजगार से जोड़ने वाला मंच है।
-    </p>
+    <b>User Name:</b> Demo User<br>
+    <b>User ID:</b> AUN00002<br>
+    <b>Rank:</b> <span class="rank">Motivator</span>
   </div>
 
-  <div class="card">
-    <h3>🎯 हमारा उद्देश्य</h3>
-    <p>
-      महिला सशक्तिकरण, स्वरोजगार और डिजिटल इंडिया को मजबूत बनाना।
-    </p>
+  <div class="menu">
+    <div>🏠 Dashboard</div>
+    <div>📈 Income</div>
+    <div>🌐 Network</div>
+    <div>🏧 Wallet</div>
   </div>
-</main>
 
-<!-- FOOTER -->
-<footer>
-  © 2022 ANSHIKA UDHYOG CENTER <br>
-  DMVV BHARTIY MAHILA SHAKTI FOUNDATION™
-</footer>
+  <div class="grid">
+    <div class="card"><b>Main Wallet</b><br>₹400</div>
+    <div class="card"><b>Total Income</b><br>₹6520</div>
+    <div class="card"><b>Total Withdrawal</b><br>₹6120</div>
+  </div>
 
-<!-- FLOATING WHATSAPP -->
-<a class="float-wa" href="https://wa.me/917739000835">💬</a>
+  <button class="btn gray" onclick="show('home')">Logout</button>
+</section>
+
+<!-- ADMIN LOGIN -->
+<section id="adminLogin" class="section">
+  <div class="form-box">
+    <h3>Admin Login</h3>
+    <input id="aid" placeholder="Admin ID">
+    <input id="apass" type="password" placeholder="Password">
+    <button class="btn" onclick="adminLogin()">Login</button>
+    <p id="alog" style="color:red;text-align:center"></p>
+    <button class="btn gray" onclick="show('home')">Back</button>
+  </div>
+</section>
+
+<footer>© 2022 ANSHIKA UDHYOG™</footer>
+
+<a class="whatsapp"
+href="https://wa.me/917739000835"
+target="_blank">💬</a>
+
+<script>
+function show(id){
+  document.querySelectorAll('.section')
+    .forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function showPay(){
+  document.getElementById("payBtn").style.display="block";
+}
+
+function userLogin(){
+  if(uid.value==="AUN00002" && upass.value==="123456"){
+    show("dashboard");
+  }else{
+    ulog.innerText="Invalid User ID or Password";
+  }
+}
+
+function adminLogin(){
+  if(aid.value==="ADMIN" && apass.value==="ADMIN@123"){
+    alert("Admin login demo only");
+  }else{
+    alog.innerText="Invalid Admin Credentials";
+  }
+}
+</script>
 
 </body>
 </html>
