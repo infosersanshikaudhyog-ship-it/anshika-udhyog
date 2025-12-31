@@ -272,7 +272,7 @@ style="width:100%;border-radius:16px">
 <h3>🔐 Login</h3>
 <input placeholder="User ID">
 <input type="password" placeholder="Password">
-<button class="btn">Login</button>
+<button class="btn" onclick="adminLoginSuccess()">Login</button>
 <button class="btn" onclick="closeAll()">Close</button>
 </div>
 </div>
@@ -313,3 +313,49 @@ window.scrollTo({top:0,behavior:"smooth"});
 
 </body>
 </html>
+<!-- ================= ADMIN DASHBOARD ================= -->
+<div class="modal-bg" id="adminDashboard">
+  <div class="modal" style="max-width:480px">
+
+    <h3 style="text-align:center">📊 Admin Dashboard</h3>
+
+    <div class="card">
+      <b>Total Users</b><br>
+      1,254
+    </div>
+
+    <div class="card">
+      <b>Total Income</b><br>
+      ₹ 18,45,320
+    </div>
+
+    <div class="card">
+      <b>Total Payout</b><br>
+      ₹ 15,72,100
+    </div>
+
+    <div class="card">
+      <b>Active Centers</b><br>
+      87
+    </div>
+
+    <button class="btn green" onclick="alert('Users Module')">👥 Manage Users</button>
+    <button class="btn" onclick="alert('Reports Module')">📋 Reports</button>
+    <button class="btn" onclick="alert('Settings Module')">⚙️ Settings</button>
+
+    <button class="btn" onclick="closeAll()">Logout</button>
+
+  </div>
+</div>
+<script>
+function openAdmin(){
+  closeAll();
+  document.getElementById("adminModal").style.display="flex";
+}
+
+/* Admin Login Action */
+function adminLoginSuccess(){
+  closeAll();
+  document.getElementById("adminDashboard").style.display="flex";
+}
+</script>
