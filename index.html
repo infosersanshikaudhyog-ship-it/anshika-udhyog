@@ -11,7 +11,7 @@ body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Arial;
 background:#eef1f5;
-padding-bottom:80px;
+padding-bottom:70px;
 }
 
 /* HEADER */
@@ -29,8 +29,9 @@ border:none;color:#fff;
 padding:6px 10px;border-radius:20px;font-size:12px
 }
 
-/* MAIN */
-.section{padding:76px 14px 14px}
+/* SECTIONS */
+.section{padding:76px 14px 14px;display:none}
+.section.active{display:block}
 
 /* CARD */
 .card{
@@ -89,36 +90,74 @@ padding-top:6px;color:#555
     <img src="https://i.ibb.co/sdb6q8nM/file-00000000a20471fda53235897c948cd9.jpg">
     <b>ANSHIKA UDHYOG</b>
   </div>
-  <div>
-    <button class="h-btn" onclick="openAdmin()">🔐 Admin</button>
-  </div>
+  <button class="h-btn" onclick="openAdmin()">🔐 Admin</button>
 </div>
 
 <!-- HOME -->
-<section class="section">
-<div class="card">
-<img src="https://i.ibb.co/nsK8pm4g/file-000000002ae87207a555e534c516e129.png" style="width:100%;border-radius:16px">
-</div>
+<section class="section active" id="home">
+  <div class="card">
+    <img src="https://i.ibb.co/nsK8pm4g/file-000000002ae87207a555e534c516e129.png" style="width:100%;border-radius:16px">
+  </div>
 
-<div class="card" style="text-align:center">
-<h3>ANSHIKA UDHYOG NETWORK</h3>
-<p>Self Employment • Skill Development • Digital India</p>
-</div>
+  <div class="card" style="text-align:center">
+    <h3>ANSHIKA UDHYOG NETWORK</h3>
+    <p>Self Employment • Skill Development • Digital India</p>
+  </div>
 
-<div class="grid">
-<div class="card"><div class="icon">💰</div><b>Multiple Income</b></div>
-<div class="card"><div class="icon">🌐</div><b>Team Network</b></div>
-<div class="card"><div class="icon">🛒</div><b>Product</b></div>
-<div class="card"><div class="icon">🏦</div><b>Secure Wallet</b></div>
-</div>
+  <div class="grid">
+    <div class="card"><div class="icon">💰</div><b>Multiple Income</b></div>
+    <div class="card"><div class="icon">🌐</div><b>Team Network</b></div>
+    <div class="card"><div class="icon">🛒</div><b>Product</b></div>
+    <div class="card"><div class="icon">🏦</div><b>Secure Wallet</b></div>
+  </div>
 
-<div class="card">
-<button class="btn green" onclick="openJoin()">Join Now</button>
-<button class="btn" onclick="openLogin()">Login</button>
-</div>
+  <div class="card">
+    <button class="btn green" onclick="openJoin()">Join Now</button>
+    <button class="btn" onclick="openLogin()">Login</button>
+  </div>
 </section>
 
-<!-- JOIN -->
+<!-- INCOME -->
+<section class="section" id="income">
+  <div class="card">
+    <h3>💰 Income Summary</h3>
+    <ul>
+      <li>Active Income: ₹12,500</li>
+      <li>Passive Income: ₹8,000</li>
+      <li>Level Income: ₹4,200</li>
+      <li>Royalty Bonus: ₹1,800</li>
+    </ul>
+    <b>Total: ₹26,500</b>
+  </div>
+</section>
+
+<!-- WALLET -->
+<section class="section" id="wallet">
+  <div class="card">
+    <h3>🏦 Wallet</h3>
+    <ul>
+      <li>Main Wallet: ₹9,567</li>
+      <li>Withdrawn: ₹16,933</li>
+      <li>Pending: ₹0</li>
+    </ul>
+    <button class="btn green">Request Withdrawal</button>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section" id="team">
+  <div class="card">
+    <h3>🌐 Team Overview</h3>
+    <ul>
+      <li>Total Members: 565</li>
+      <li>Active Members: 423</li>
+      <li>Direct Team: 12</li>
+      <li>Level Team: 553</li>
+    </ul>
+  </div>
+</section>
+
+<!-- JOIN MODAL -->
 <div class="modal-bg" id="joinModal">
 <div class="modal">
 <h3>📝 Registration</h3>
@@ -131,55 +170,34 @@ padding-top:6px;color:#555
 </div>
 </div>
 
-<!-- LOGIN -->
+<!-- LOGIN MODAL -->
 <div class="modal-bg" id="loginModal">
 <div class="modal">
 <h3>🔐 Login</h3>
 <input placeholder="User ID">
 <input type="password" placeholder="Password">
-<button class="btn green" onclick="openUserDash()">Login</button>
+<button class="btn green">Login</button>
 <button class="btn" onclick="closeAll()">Close</button>
 </div>
 </div>
 
-<!-- USER DASHBOARD -->
-<div class="modal-bg" id="userDashboard">
-<div class="modal">
-<h3>👤 User Dashboard</h3>
-<div class="card">💰 Income: ₹26,500</div>
-<div class="card">🏦 Wallet: ₹9,567</div>
-<div class="card">🌐 Team: 565 Members</div>
-<button class="btn" onclick="closeAll()">Logout</button>
-</div>
-</div>
-
-<!-- ADMIN -->
+<!-- ADMIN MODAL -->
 <div class="modal-bg" id="adminModal">
 <div class="modal">
 <h3>🔐 Admin Login</h3>
 <input placeholder="Admin ID">
 <input type="password" placeholder="Password">
-<button class="btn green" onclick="openAdminDash()">Login</button>
+<button class="btn green">Login</button>
 <button class="btn" onclick="closeAll()">Close</button>
-</div>
-</div>
-
-<!-- ADMIN DASH -->
-<div class="modal-bg" id="adminDashboard">
-<div class="modal">
-<h3>📊 Admin Dashboard</h3>
-<div class="card">Users: 1254</div>
-<div class="card">Income: ₹18,45,320</div>
-<button class="btn" onclick="closeAll()">Logout</button>
 </div>
 </div>
 
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
-<div class="active" onclick="scrollToTop()"><span>🏠</span>Home</div>
-<div onclick="openJoin()"><span>📝</span>Join</div>
-<div onclick="openLogin()"><span>🔐</span>Login</div>
-<div onclick="alert('Call: 7739000835')"><span>📞</span>Contact</div>
+  <div class="active" onclick="showPage('home',this)"><span>🏠</span>Home</div>
+  <div onclick="showPage('income',this)"><span>💰</span>Income</div>
+  <div onclick="showPage('wallet',this)"><span>🏦</span>Wallet</div>
+  <div onclick="showPage('team',this)"><span>🌐</span>Team</div>
 </div>
 
 <script>
@@ -189,9 +207,14 @@ document.querySelectorAll('.modal-bg').forEach(m=>m.style.display='none');
 function openJoin(){closeAll();joinModal.style.display='flex'}
 function openLogin(){closeAll();loginModal.style.display='flex'}
 function openAdmin(){closeAll();adminModal.style.display='flex'}
-function openUserDash(){closeAll();userDashboard.style.display='flex'}
-function openAdminDash(){closeAll();adminDashboard.style.display='flex'}
-function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
+
+function showPage(id,el){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('.bottom-nav div').forEach(b=>b.classList.remove('active'));
+el.classList.add('active');
+window.scrollTo(0,0);
+}
 </script>
 
 </body>
