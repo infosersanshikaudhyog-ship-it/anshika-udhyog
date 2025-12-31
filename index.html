@@ -1,52 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ANSHIKA UDHYOG NETWORK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Segoe UI,Arial;
+background:#f2f4f8;
+padding-bottom:70px
+}
+
+/* HEADER */
+header{
+background:#0b3c5d;
+color:#fff;
+padding:14px;
+text-align:center;
+font-weight:700;
+font-size:18px;
+position:sticky;
+top:0;
+z-index:10
+}
+
+/* SECTION */
+.section{display:none;padding:16px}
+.section.active{display:block}
+
+/* CARD */
+.card{
+background:#fff;
+border-radius:16px;
+padding:16px;
+margin-bottom:14px;
+box-shadow:0 6px 18px rgba(0,0,0,.12)
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:12px
+}
+
+/* BUTTON */
+.btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:#0b3c5d;
+color:#fff;
+font-weight:600;
+margin-top:10px;
+font-size:15px
+}
+.green{background:#198754}
+.gray{background:#6c757d}
+
+/* FORM */
+input{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+margin:8px 0
+}
+
+/* BOTTOM MENU */
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#fff;
+display:flex;
+justify-content:space-around;
+border-top:1px solid #ddd;
+padding:8px 0
+}
+.bottom-nav div{
+text-align:center;
+font-size:12px;
+color:#555
+}
+.bottom-nav span{
+font-size:22px;
+display:block
+}
+.bottom-nav div.active{
+color:#0b3c5d;
+font-weight:700
+}
+
+/* WALLET */
+.amount{
+font-size:26px;
+font-weight:700;
+color:#0b3c5d
+}
+</style>
+</head>
+
+<body>
+
+<header>ANSHIKA UDHYOG NETWORK</header>
 
 <!-- HOME -->
 <section id="home" class="section active">
 
-  <!-- Welcome Card -->
-  <div class="card" style="text-align:center">
-    <h2>Welcome to</h2>
-    <h1 style="color:#0b3c5d;margin:5px 0">
-      ANSHIKA UDHYOG NETWORK
-    </h1>
-    <p>
-      Self Employment • Digital India • Financial Freedom
-    </p>
-  </div>
+<div class="card" style="text-align:center">
+<h2>Welcome 👋</h2>
+<h1 style="color:#0b3c5d">ANSHIKA UDHYOG</h1>
+<p>Self Employment • Digital India</p>
+</div>
 
-  <!-- Banner -->
-  <div class="card">
-    <img src="https://i.ibb.co/tPmT0VSQ/file-000000002ae87207a555e534c516e129.png"
-         style="width:100%;border-radius:14px">
-  </div>
+<div class="grid">
+<div class="card">
+<b>💰 Multiple Income</b><br>
+Active • Passive • Level
+</div>
+<div class="card">
+<b>🌐 Team Network</b><br>
+Unlimited Growth
+</div>
+<div class="card">
+<b>🛒 Products</b><br>
+Utility & Health
+</div>
+<div class="card">
+<b>🏦 Wallet</b><br>
+Weekly Payout
+</div>
+</div>
 
-  <!-- Features -->
-  <div class="grid">
-    <div class="card" style="text-align:center">
-      <h3>💰 Multiple Income</h3>
-      <p>Active, Passive & Level Income</p>
-    </div>
-
-    <div class="card" style="text-align:center">
-      <h3>🌐 Team Network</h3>
-      <p>Unlimited Growth System</p>
-    </div>
-
-    <div class="card" style="text-align:center">
-      <h3>🛒 Products</h3>
-      <p>Health & Utility Products</p>
-    </div>
-
-    <div class="card" style="text-align:center">
-      <h3>🏦 Wallet</h3>
-      <p>Weekly & Monthly Payouts</p>
-    </div>
-  </div>
-
-  <!-- Action Buttons -->
-  <div class="card">
-    <button class="btn" onclick="show('register')">Join Now</button>
-    <button class="btn green" onclick="show('login')">Login</button>
-    <button class="btn gray" onclick="show('adminLogin')">Admin</button>
-  </div>
+<div class="card">
+<button class="btn" onclick="show('register')">Join Now</button>
+<button class="btn green" onclick="show('login')">Login</button>
+</div>
 
 </section>
+
+<!-- REGISTER -->
+<section id="register" class="section">
+<div class="card">
+<h3>New User Registration</h3>
+<input placeholder="Sponsor ID (optional)">
+<input placeholder="Full Name *">
+<input placeholder="Mobile Number *">
+<input placeholder="Email (optional)">
+<input type="password" placeholder="Password *">
+<input type="password" placeholder="Confirm Password *">
+<button class="btn green">Register & Pay ₹260</button>
+<button class="btn gray" onclick="show('home')">Back</button>
+</div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="section">
+<div class="card">
+<h3>User Login</h3>
+<input placeholder="User ID">
+<input type="password" placeholder="Password">
+<button class="btn" onclick="show('dashboard')">Login</button>
+<button class="btn gray" onclick="show('home')">Back</button>
+</div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="section">
+
+<div class="card">
+<b>User:</b> Krishna Sharma<br>
+<b>ID:</b> AUN00002<br>
+<b>Rank:</b> Motivator
+</div>
+
+<div class="grid">
+<div class="card">
+<b>Main Wallet</b><br>
+₹9,567
+</div>
+<div class="card">
+<b>Total Income</b><br>
+₹26,500
+</div>
+<div class="card">
+<b>Total Team</b><br>
+565
+</div>
+<div class="card">
+<b>Today Income</b><br>
+₹450
+</div>
+</div>
+
+</section>
+
+<!-- INCOME -->
+<section id="income" class="section">
+<div class="card">
+<h3>Income Overview</h3>
+<ul>
+<li>Active Income: ₹3,400</li>
+<li>Upgrade Income: ₹2,650</li>
+<li>Level Income: ₹17,300</li>
+<li>Utility Income: ₹1,150</li>
+</ul>
+</div>
+</section>
+
+<!-- WALLET -->
+<section id="wallet" class="section">
+<div class="card" style="text-align:center">
+<h3>Wallet Balance</h3>
+<div class="amount">₹9,567</div>
+</div>
+
+<div class="card">
+<button class="btn green">Request Withdraw</button>
+<button class="btn gray">Add Bank</button>
+</div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="section">
+<div class="card">
+<h3>Team Summary</h3>
+<p>Total Members: <b>565</b></p>
+<p>Active Members: <b>423</b></p>
+<p>New Today: <b>14</b></p>
+</div>
+</section>
+
+<!-- BOTTOM MENU -->
+<div class="bottom-nav">
+<div class="active" onclick="nav('home')"><span>🏠</span>Home</div>
+<div onclick="nav('income')"><span>💰</span>Income</div>
+<div onclick="nav('wallet')"><span>🏦</span>Wallet</div>
+<div onclick="nav('team')"><span>🌐</span>Team</div>
+</div>
+
+<script>
+function show(id){
+document.querySelectorAll('.section')
+.forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+function nav(id){
+show(id);
+document.querySelectorAll('.bottom-nav div')
+.forEach(d=>d.classList.remove('active'));
+event.currentTarget.classList.add('active');
+}
+</script>
+
+</body>
+</html>
