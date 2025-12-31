@@ -11,10 +11,10 @@ body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Arial;
 background:#eef1f5;
-padding-bottom:72px;
+padding-bottom:20px;
 }
 
-/* APP HEADER */
+/* ===== APP HEADER ===== */
 .app-header{
 background:#0b3c5d;
 color:#fff;
@@ -32,16 +32,16 @@ right:0;
 z-index:100;
 }
 .app-header img{
-height:34px;
+height:36px;
 border-radius:6px;
 }
 
-/* SECTION */
+/* ===== SECTION ===== */
 .section{
 padding:78px 14px 14px;
 }
 
-/* CARD */
+/* ===== CARD ===== */
 .card{
 background:#fff;
 border-radius:18px;
@@ -50,14 +50,18 @@ margin-bottom:14px;
 box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
-/* GRID */
+/* ===== GRID ===== */
 .grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:12px;
 }
 
-/* BUTTON */
+/* ===== TEXT ===== */
+.center{text-align:center}
+.small{font-size:13px;color:#555}
+
+/* ===== BUTTON ===== */
 .btn{
 width:100%;
 padding:13px;
@@ -71,63 +75,35 @@ margin-top:10px;
 }
 .green{background:#198754}
 .gray{background:#6c757d}
-
-/* TEXT */
-.small{font-size:13px;color:#555}
-.center{text-align:center}
 </style>
 </head>
 
 <body>
 
-<!-- APP HEADER -->
+<!-- APP HEADER WITH LOGO -->
 <div class="app-header">
-  <img src="https://i.ibb.co/sdb6q8nM/file-00000000a20471fda53235897c948cd9.jpg">
+  <img src="https://i.ibb.co/sdb6q8nM/file-00000000a20471fda53235897c948cd9.jpg" alt="ANSHIKA LOGO">
   <span>ANSHIKA UDHYOG</span>
 </div>
 
-<!-- HOME -->
+<!-- HOME SECTION -->
 <section class="section">
 
 <!-- BANNER -->
 <div class="card">
-  <img src="https://i.ibb.co/nMgnmFrq/file-00000000a3807206b2bc9ec7914708a0.png"
-       style="width:100%;border-radius:16px">
+  <img src="https://i.ibb.co/nsK8pm4g/file-000000002ae87207a555e534c516e129.png"
+       style="width:100%;border-radius:16px" alt="Banner">
 </div>
 
-<!-- WELCOME -->
+<!-- INTRO -->
 <div class="card center">
-  <h2>Welcome 👋</h2>
+  <h2>Welcome to</h2>
   <h3 style="color:#0b3c5d;margin:4px 0">
     ANSHIKA UDHYOG NETWORK
   </h3>
   <p class="small">
-    Self Employment • Digital India • Financial Freedom
+    Self Employment • Skill Development • Digital India
   </p>
-</div>
-
-<!-- BRAND AMBASSADOR -->
-<div class="card center">
-  <img src="https://i.ibb.co/LhbWykF9/file-00000000b8f871fab2f3070ba5d623eb.png"
-       style="width:110px;height:110px;border-radius:50%;object-fit:cover">
-  <h3 style="margin:10px 0 4px">ANSHIKA</h3>
-  <p class="small">
-    Brand Ambassador<br>
-    ANSHIKA UDHYOG NETWORK
-  </p>
-</div>
-
-<!-- MANAGING DIRECTOR -->
-<div class="card" style="display:flex;gap:12px;align-items:center">
-  <img src="https://i.ibb.co/tpB6nYyp/file-00000000c97c7206b235b7dc6fd5ac39.png"
-       style="width:80px;height:80px;border-radius:14px;object-fit:cover">
-  <div>
-    <b>Dulal Mukherjee</b><br>
-    <span class="small">
-      Managing Director<br>
-      ANSHIKA UDHYOG NETWORK
-    </span>
-  </div>
 </div>
 
 <!-- FEATURES -->
@@ -138,19 +114,19 @@ margin-top:10px;
   </div>
   <div class="card">
     <b>🌐 Team Network</b><br>
-    <span class="small">Unlimited Growth</span>
+    <span class="small">Structured Growth System</span>
   </div>
   <div class="card">
     <b>🛒 Products</b><br>
-    <span class="small">Utility & Health</span>
+    <span class="small">Utility & Daily Use</span>
   </div>
   <div class="card">
-    <b>🏦 Weekly Payout</b><br>
-    <span class="small">Secure Wallet System</span>
+    <b>🏦 Secure Wallet</b><br>
+    <span class="small">Weekly / Monthly Payout</span>
   </div>
 </div>
 
-<!-- ACTION -->
+<!-- ACTION BUTTONS -->
 <div class="card">
   <button class="btn green">Join Now</button>
   <button class="btn">Login</button>
